@@ -1,6 +1,8 @@
+-- Membuat Database Kosmetik
 CREATE DATABASE database_kosmetik;
 USE database_kosmetik;
 
+-- Membuat Tabel Pelanggan
 CREATE TABLE pelanggan (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     nama_lengkap VARCHAR(100) NOT NULL,
@@ -10,6 +12,7 @@ CREATE TABLE pelanggan (
     tanggal_daftar DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Membuat Tabel Produk Kosmetik
 CREATE TABLE produk_kosmetik (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     nama_produk VARCHAR(150) NOT NULL,
@@ -19,6 +22,7 @@ CREATE TABLE produk_kosmetik (
     stok INT NOT NULL DEFAULT 0 CHECK (stok >= 0)
 );
 
+-- Membuat Tabel Pesanan
 CREATE TABLE pesanan (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
